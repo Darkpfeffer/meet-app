@@ -87,3 +87,5 @@ Scenario 1: Show a chart with the number of upcoming events in the searched city
     - **Given** the main page is open
     - **When** a user is searching for a city
     - **Then** they should be able to see a chart showing the number of upcoming events
+
+## Thank you for checking out my application!
