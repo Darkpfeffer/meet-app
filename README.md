@@ -6,6 +6,9 @@ Usable with any device.
 
 This is a serverless web application, built with test-driven development technique.
 
+**Serverless provider: Amazon Web Services**
+I will use serverless functions as the server-side of my application to generate an OAuth token to the user in order to be authorized, and they will be able to use the Google Calendar API
+
 **API used:** Google Calendar API
 
 ### Feature 1: Filter events by city

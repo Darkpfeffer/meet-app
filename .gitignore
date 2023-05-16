@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 A4-Project-Brief-Jan2023.pdf
 client_secret.json
+aws-config.txt
+aws-config.csv
