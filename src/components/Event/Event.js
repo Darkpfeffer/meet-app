@@ -1,5 +1,15 @@
-export const Event = () => {
+export const Event = ({ firstEvent }) => {
     return (
-        <li></li>
+        <li>
+            {firstEvent ? (
+                <>
+                    <p>{firstEvent.summary}</p>
+                    <p>{firstEvent.start.dateTime}</p>
+                    <p>{firstEvent.location}</p>
+                    
+                </>
+            ) : null }
+            <button>Show details</button>
+        </li>
     )
 }
