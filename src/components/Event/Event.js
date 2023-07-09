@@ -1,36 +1,36 @@
 //import
 import { useState } from "react"
 
-export const Event = ({ firstEvent }) => {
+export const Event = ({ event }) => {
     const [showDetails, setShowDetails] = useState(false)
-    const toggleDetails = (event) => {
-        event.preventDefault();
+    const toggleDetails = (e) => {
+        e.preventDefault();
         setShowDetails(!showDetails);
     }
 
     return (
         <li>
-            {firstEvent && !showDetails ? (
+            {event && !showDetails ? (
                 <>
-                    <p>{firstEvent.summary}</p>
-                    <p>{firstEvent.start.dateTime}</p>
-                    <p>{firstEvent.end.dateTime}</p>
-                    <p>{firstEvent.start.timeZone}</p>
-                    <p>{firstEvent.location}</p>
+                    <p>{event.summary}</p>
+                    <p>{event.start.dateTime}</p>
+                    <p>{event.end.dateTime}</p>
+                    <p>{event.start.timeZone}</p>
+                    <p>{event.location}</p>
                     <button onClick={toggleDetails}>Show details</button>
                 </>
             ) : null }
 
-            {firstEvent && showDetails ? (
+            {event && showDetails ? (
                 <>
-                    <p>{firstEvent.summary}</p>
-                    <p>{firstEvent.start.dateTime}</p>
-                    <p>{firstEvent.end.dateTime}</p>
-                    <p>{firstEvent.start.timeZone}</p>
-                    <p>{firstEvent.location}</p>
-                    <p className="description">{firstEvent.description}</p>
-                    <p>{firstEvent.htmlLink}</p>
-                    <p>{firstEvent.iCalUID}</p>
+                    <p>{event.summary}</p>
+                    <p>{event.start.dateTime}</p>
+                    <p>{event.end.dateTime}</p>
+                    <p>{event.start.timeZone}</p>
+                    <p>{event.location}</p>
+                    <p className="description">{event.description}</p>
+                    <p>{event.htmlLink}</p>
+                    <p>{event.iCalUID}</p>
                     <button onClick={toggleDetails}>Hide details</button>
                 </>
             ) : null }

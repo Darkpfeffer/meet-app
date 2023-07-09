@@ -13,7 +13,7 @@ describe ('<Event /> component', () => {
     let EventComponent;
     beforeEach(async() => {
         allEvents = await getEvents();
-        EventComponent = render(<Event firstEvent={ allEvents[0]}/>)
+        EventComponent = render(<Event event={ allEvents[0]}/>)
     })
 
     test('renders event summary', async () => {
