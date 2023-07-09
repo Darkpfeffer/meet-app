@@ -16,4 +16,8 @@ describe('<App /> component', () => {
     test('render CitySearch', () => {
         expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
     })
+
+    test('renders the 32 events by default', () => {
+        expect(AppDOM.querySelector('#number-of-events')).toBeInTheDocument();
+    })
 });

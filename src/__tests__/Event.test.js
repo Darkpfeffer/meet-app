@@ -51,7 +51,7 @@ describe ('<Event /> component', () => {
         const user = userEvent.setup();
         const showDetailsButton = EventComponent.queryByText(`Show details`);
         await user.click(showDetailsButton)
-        expect(EventComponent.queryByTestId('description')).toBeInTheDocument();
+        expect(EventComponent.container.firstChild.querySelector('.description')).toBeInTheDocument();
     })
 
     test('renders events html link when "showDetails" is active', async() => {

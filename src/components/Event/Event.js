@@ -28,7 +28,7 @@ export const Event = ({ firstEvent }) => {
                     <p>{firstEvent.end.dateTime}</p>
                     <p>{firstEvent.start.timeZone}</p>
                     <p>{firstEvent.location}</p>
-                    <p data-testid="description">{firstEvent.description}</p>
+                    <p className="description">{firstEvent.description}</p>
                     <p>{firstEvent.htmlLink}</p>
                     <p>{firstEvent.iCalUID}</p>
                     <button onClick={toggleDetails}>Hide details</button>
