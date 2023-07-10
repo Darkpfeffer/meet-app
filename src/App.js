@@ -34,12 +34,12 @@ export const App = () => {
 
   return (
     <div className='App'>
-      <EventList events={events} />
       <CitySearch 
         allLocations={allLocations} 
         setCurrentCity={setCurrentCity}
       />
       <NumberOfEvents/>
+      <EventList events={events} />
     </div>
   )
 }
