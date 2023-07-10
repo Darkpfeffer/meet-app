@@ -30,7 +30,7 @@ export const App = () => {
 
   useEffect(() => {
     fetchData();
-  }, [currentCity]);
+  }, [currentCity, currentNOE]);
 
   return (
     <div className='App'>
@@ -38,8 +38,8 @@ export const App = () => {
         allLocations={allLocations} 
         setCurrentCity={setCurrentCity}
       />
-      <NumberOfEvents/>
-      <EventList events={events} />
+      <NumberOfEvents setCurrentNOE={setCurrentNOE} />
+      <EventList events={events} currentNOE={currentNOE} />
     </div>
   )
 }

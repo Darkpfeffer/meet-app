@@ -7,6 +7,7 @@ import { App } from '../App';
 
 //import function
 import { getEvents } from '../api';
+import { NumberOfEvents } from '../components/NumberOfEvents/NumberOfEvents';
 
 describe('<App /> component', () => {
     let AppDOM;
@@ -54,4 +55,18 @@ describe('<App /> integration', () => {
             expect(event.textContent).toContain("Berlin, Germany")
         })
     });
+
+    test('renders the specific number of event after user input', async() => {
+        const user = userEvent.setup();
+        const AppComponent = render(<App />);
+        const AppDOM = AppComponent.container.firstChild;
+
+        const NumberOfEventsDOM = AppDOM.querySelector('#number-of-events');
+        const NOEinput = within(NumberOfEventsDOM).queryByRole('textbox');
+        await user.type(NOEinput, "{backspace}{backspace}10");
+        
+        const EventListDOM = AppDOM.querySelector('#event-list');
+        const allRenderedEventItems = within(EventListDOM).queryAllByRole('listitem');
+        expect(allRenderedEventItems.length).toBe(Number(NOEinput.value));
+    })
 })

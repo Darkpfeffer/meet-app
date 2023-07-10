@@ -29,6 +29,9 @@ export const CitySearch = ({ allLocations, setCurrentCity }) => {
 
     return (
         <div id="city-search">
+            <label>
+                Search events by city:
+            </label>
             <input 
                 type="text"
                 className="city"
