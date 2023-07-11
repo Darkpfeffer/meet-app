@@ -3,10 +3,10 @@ import { Event } from "../Event/Event"
 
 export const EventList = ({ events }) => {
     return (
-        <ul id="event-list">
+        <div role="list" id="event-list">
             {events ? 
                 events.map(event => <Event key={event.id} event={event} />)
             : null}
-        </ul>
+        </div>
     )
 }

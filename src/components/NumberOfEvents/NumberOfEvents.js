@@ -5,11 +5,19 @@ export const NumberOfEvents = ({ setCurrentNOE }) => {
     }
 
     return (
-        <div id="number-of-events">
+        <div 
+            id="number-of-events" 
+            className='App-header__item'
+        >
             <label>
                 Number of events:
             </label> 
-            <input role="textbox" defaultValue={32} onChange={numberChange}></input>
+            <input 
+                role="textbox" 
+                defaultValue={32} 
+                onChange={numberChange}
+            >
+            </input>
         </div>
     )
 }

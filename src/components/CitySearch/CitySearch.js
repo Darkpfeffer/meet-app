@@ -28,7 +28,10 @@ export const CitySearch = ({ allLocations, setCurrentCity }) => {
     }, [`${allLocations}`])
 
     return (
-        <div id="city-search">
+        <div 
+            id="city-search"
+            className='App-header__item'
+        >
             <label>
                 Search events by city:
             </label>
@@ -43,11 +46,18 @@ export const CitySearch = ({ allLocations, setCurrentCity }) => {
             {showSuggestions ? 
                 <ul className="suggestions">
                     {suggestions.map((suggestion) => {
-                        return <li onClick={handleItemClicked} key={suggestion}>
+                        return (<li onClick={handleItemClicked} 
+                                    key={suggestion} 
+                                    className="selection"
+                        >
                             {suggestion}
-                        </li>
+                        </li>)
                     })}
-                    <li key='See all cities' onClick={handleItemClicked}>
+                    <li 
+                        key='See all cities' 
+                        onClick={handleItemClicked}
+                        className="selection last-selection"
+                    >
                         <b>See all cities</b>
                     </li>
                 </ul> : null}

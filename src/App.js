@@ -34,11 +34,15 @@ export const App = () => {
 
   return (
     <div className='App'>
-      <CitySearch 
-        allLocations={allLocations} 
-        setCurrentCity={setCurrentCity}
-      />
-      <NumberOfEvents setCurrentNOE={setCurrentNOE} />
+      <header className='App-header'>
+        <NumberOfEvents 
+          setCurrentNOE={setCurrentNOE}
+        />
+        <CitySearch 
+          allLocations={allLocations} 
+          setCurrentCity={setCurrentCity}
+        />
+      </header>
       <EventList events={events} currentNOE={currentNOE} />
     </div>
   )

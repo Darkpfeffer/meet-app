@@ -3,37 +3,39 @@ import { useState } from "react"
 
 export const Event = ({ event }) => {
     const [showDetails, setShowDetails] = useState(false)
+
     const toggleDetails = (e) => {
         e.preventDefault();
         setShowDetails(!showDetails);
     }
 
     return (
-        <li>
-            {event && !showDetails ? (
-                <>
-                    <p>{event.summary}</p>
-                    <p>{event.start.dateTime}</p>
-                    <p>{event.end.dateTime}</p>
-                    <p>{event.start.timeZone}</p>
-                    <p>{event.location}</p>
-                    <button onClick={toggleDetails}>Show details</button>
-                </>
-            ) : null }
+        <>
+                {event && !showDetails ? (
+                    <div role="listitem" className="event grid-item">
+                        <h2>{event.summary}</h2>
+                        <p>From<br/>
+                            <span>{event.start.dateTime}</span><br />
+                            <span> to </span><br />
+                            <span>{event.end.dateTime}</span></p>
+                        <p>Time zone: <span>{event.start.timeZone}</span></p>
+                        <p>Location: <span>{event.location}</span></p>
+                        <button onClick={toggleDetails}>Show details</button>
+                    </div>
+                ) : null }
 
-            {event && showDetails ? (
-                <>
-                    <p>{event.summary}</p>
-                    <p>{event.start.dateTime}</p>
-                    <p>{event.end.dateTime}</p>
-                    <p>{event.start.timeZone}</p>
-                    <p>{event.location}</p>
-                    <p className="description">{event.description}</p>
-                    <p>{event.htmlLink}</p>
-                    <p>{event.iCalUID}</p>
-                    <button onClick={toggleDetails}>Hide details</button>
-                </>
-            ) : null }
-        </li>
+                {event && showDetails ? (
+                    <div role="listitem" className="event grid-item show-details">
+                        <h2>{event.summary}</h2>
+                        <p>From <span>{event.start.dateTime}</span><span> to </span><span>{event.end.dateTime}</span></p>
+                        <p>Time zone: <span>{event.start.timeZone}</span></p>
+                        <p>Location: <span>{event.location}</span></p>
+                        <p className="description">{event.description}</p>
+                        <p>Open in Google Calendar: <span><a href={event.htmlLink} rel={event.summary} target="_blank">{event.htmlLink.substring(0, 50)}...</a></span></p>
+                        <p>ICalendar ID: <span>{event.iCalUID}</span></p>
+                        <button onClick={toggleDetails}>Hide details</button>
+                    </div>
+                ) : null }
+        </>
     )
 }

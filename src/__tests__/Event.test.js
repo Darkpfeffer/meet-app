@@ -59,7 +59,7 @@ describe ('<Event /> component', () => {
         const user = userEvent.setup();
         const showDetailsButton = EventComponent.queryByText(`Show details`);
         await user.click(showDetailsButton)
-        expect(EventComponent.queryByText(allEvents[0].htmlLink)).toBeInTheDocument();
+        expect(EventComponent.queryByText(allEvents[0].htmlLink.substring(0, 50) + "...")).toBeInTheDocument();
     })
 
     test('renders ICalendar ID when "showDetails" is active', async() => {
