@@ -1,3 +1,7 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable arrow-parens */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/react-in-jsx-scope */
 //import
 import { useState } from "react"
 
@@ -20,7 +24,7 @@ export const Event = ({ event }) => {
                             <span>{event.end.dateTime}</span></p>
                         <p>Time zone: <span>{event.start.timeZone}</span></p>
                         <p>Location: <span>{event.location}</span></p>
-                        <button onClick={toggleDetails}>Show details</button>
+                        <button onClick={toggleDetails} className="show-details-btn">Show details</button>
                     </div>
                 ) : null }
 
@@ -33,7 +37,7 @@ export const Event = ({ event }) => {
                         <p className="description">{event.description}</p>
                         <p>Open in Google Calendar: <span><a href={event.htmlLink} rel={event.summary} target="_blank">{event.htmlLink.substring(0, 50)}...</a></span></p>
                         <p>ICalendar ID: <span>{event.iCalUID}</span></p>
-                        <button onClick={toggleDetails}>Hide details</button>
+                        <button onClick={toggleDetails} className="hide-details-btn">Hide details</button>
                     </div>
                 ) : null }
         </>

@@ -1,16 +1,28 @@
 import puppeteer from "puppeteer";
 
 describe('show/hide an event details', () => {
-    test('An event is collapsed by default', async() => {
-        const browser = await puppeteer.launch();
-
-        const page = await browser.newPage();
+    let browser;
+    let page;
+    beforeAll(async () => {
+        browser = await puppeteer.launch()
+        page = await browser.newPage();
         await page.goto('http://localhost:3000/');
-
         await page.waitForSelector('.event');
+    })
 
-        const eventDetails = await page.$('.event .show-details');
-        expect(eventDetails).toBeNull();
+    afterAll(() => {
         browser.close();
     });
+
+    test('An event is collapsed by default', async() => {
+        const eventDetails = await page.$('.show-details');
+        expect(eventDetails).toBeNull();
+    });
+
+    test('User can expand an event to see its details', async () => {
+        await page.click('.event .show-details-btn');
+
+        const eventDetails = await page.$('.show-details');
+        expect(eventDetails).toBeDefined();
+    })
 })
