@@ -12,7 +12,6 @@
     "sourceType": "module"
     },
     "extends": [
-    "airbnb",
     "plugin:react/recommended"
     ],
     "plugins": [
@@ -30,13 +29,11 @@
     ],
     "import/no-unresolved": "off",
     "no-shadow": "off",
-    "arrow-parens": [
-    "error",
-    "as-needed"
-    ]
+    "arrow-parens": "off",
+    "react/react-in-jsx-scope": "off"
     },
     "ignorePatterns": [
     "dist/",
     "build/"
     ]
-    }
+}
