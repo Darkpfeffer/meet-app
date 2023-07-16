@@ -64,7 +64,7 @@ Scenario 1: When user hasn't specified a number, 32 is the default number
 Scenario 2: User can change the number of events they want to see	
     - **Given** the main page is open
     - **When** the user specifies the number of events visible
-    - **Then** the user should be able to see the given number at once
+    - **Then** the user should be able to see events equal to the given number at once
 
 ### Feature 4:Use the app when offline
 **User story:**
