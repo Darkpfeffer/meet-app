@@ -38,7 +38,7 @@ defineFeature(feature, test => {
     test('User can expand an event to see its details', ({ given, when, then }) => {
         let AppComponent;
         let AppDOM;
-        let EventListDOM
+        let EventListDOM;
         given('the main page is open', () => {
             AppComponent = render(<App />);
             AppDOM = AppComponent.container.firstChild;
@@ -66,16 +66,38 @@ defineFeature(feature, test => {
     });
 
     test('The user can collapse an event to hide its details', ({ given, when, then }) => {
-        given('the user used the “Show details“ button', () => {
+        let AppComponent;
+        let AppDOM;
+        let EventListDOM;
+        let EventListItems;
+        let showDetailsButton;
+        given('the user used the “Show details“ button', async() => {
+            const user = userEvent.setup();
+            AppComponent = render(<App />);
+            AppDOM = AppComponent.container.firstChild;
+            EventListDOM = AppDOM.querySelector('#event-list');
 
+            await waitFor(() => {
+                EventListItems = within(EventListDOM).queryAllByRole('listitem')
+                expect(EventListItems.length).toBe(32)
+            })
+            
+            showDetailsButton = within(EventListItems[0]).queryByText('Show details')
+            await user.click(showDetailsButton);
         });
 
-        when('the user click on the “Hide details“ button', () => {
+        let detailedEvent;
+        when('the user click on the “Hide details“ button', async() => {
+            const user = userEvent.setup();
+            detailedEvent = EventListDOM.querySelector('.show-details')
+
+            const hideDetailsButton = within(detailedEvent).queryByText('Hide details')
+            await user.click(hideDetailsButton);
 
         });
 
         then('the event\'s details should be hidden again', () => {
-
+            expect(detailedEvent).not.toBeInTheDocument();
         });
     });
 })
