@@ -64,7 +64,6 @@ describe('Filter events by city', () => {
 
     test('User can select a city from the suggested list', async() => {
         await page.click('.city');
-        const citySuggestions = await page.$('.suggestions');
 
         await page.type('.city', 'Berlin');
         
