@@ -41,12 +41,12 @@ Scenario 3: User can select a city from the suggested list
 Scenario 1: An event element is collapsed by default
     - **Given** the user didn't click on event details
     - **When** the user is on the main page
-    - **Then** the user should see only the name and the city of the events
-Scenario 2: User can expand an event to see its details
+    - **Then** the user should see only the name, time, time zone and the city of the events
+Scenario 2: The user can expand an event to see its details
     - **Given** the main page is open
     - **When** the user click on the "Show details" button
     - **Then** the details of the clicked event should be seen
-Scenario 3: User can collapse an event to hide its details
+Scenario 3: The user can collapse an event to hide its details
     - **Given** the user used the "show details" button
     - **When** the user click on the "hide details" button
     - **Then** the event's details should be hidden again
