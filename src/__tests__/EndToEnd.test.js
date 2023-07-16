@@ -32,3 +32,47 @@ describe('show/hide an event details', () => {
         expect(eventDetails).toBeNull();
     })
 })
+
+describe('Filter events by city', () => {
+    let browser;
+    let page;
+    beforeAll(async() => {
+        browser = await puppeteer.launch();
+        page = await browser.newPage();
+        await page.goto('http://localhost:3000/');
+        await page.waitForSelector('.event');
+    });
+
+    afterAll(() => {
+        browser.close();
+    });
+
+    test('When user hasn\'t searched for a city, show upcoming events from all cities', async() => {
+        const eventListDOM = await page.$('#event-list');
+        page.waitForFunction(() => {
+            const eventListItems = eventListDOM.querySelectorAll('.event');
+            expect(eventListItems.value).toBe(32);
+        })
+    });
+
+    test('User should see a list of suggestions when they search for a city', async() => {
+        await page.click('.city');
+
+        const citySuggestions = await page.$('.suggestions');
+        expect(citySuggestions).toBeDefined();
+    })
+
+    test('User can select a city from the suggested list', async() => {
+        await page.click('.city');
+        const citySuggestions = await page.$('.suggestions');
+
+        await page.type('.city', 'Berlin');
+        
+        await page.click('.selection');
+
+        page.waitForFunction(() => {
+            const eventListItems = eventListDOM.querySelectorAll('.event');
+            expect(eventListItems.value).toBe(16);
+        })
+    })
+})
