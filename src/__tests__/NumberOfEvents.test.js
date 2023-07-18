@@ -18,7 +18,10 @@ describe('<NumberOfEvents /> component', () => {
     })
 
     test('when the user enters a new number, the value of the textbox changes to that number', async() => {
-        const NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => { }}/>);
+        const NumberOfEventsComponent = render(<NumberOfEvents 
+            setCurrentNOE={() => { }}
+            setErrorAlert={() => { }}
+        />);
         const eventTextField = NumberOfEventsComponent.queryByRole('textbox');
         const user = userEvent.setup();
         await user.type(eventTextField, '{backspace}{backspace}10');

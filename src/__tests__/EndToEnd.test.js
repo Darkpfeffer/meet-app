@@ -69,6 +69,7 @@ describe('Filter events by city', () => {
         
         await page.click('.selection');
 
+        const eventListDOM = await page.$('#event-list');
         page.waitForFunction(() => {
             const eventListItems = eventListDOM.querySelectorAll('.event');
             expect(eventListItems.value).toBe(16);

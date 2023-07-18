@@ -72,6 +72,15 @@ li {
   margin: 5px;
 }
 
+/* Alerts styling*/
+.alerts-container {
+  position: fixed;
+  top: 50px;
+  left: 20px;
+  width: 250px;
+  z-index: 1000;
+}
+
 /* Events styling */
 .event {
   border: 1px solid rgba(0, 0, 0, 1);
