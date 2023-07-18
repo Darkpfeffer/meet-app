@@ -36,13 +36,13 @@ export const App = () => {
   }
 
   useEffect(() => {
-    if (!navigator.onLine) {
-      setWarningAlert("The application is currently offline")
-    } else {
+    if (navigator.onLine) {
       setWarningAlert("")
+    } else {
+      setWarningAlert("The application is currently offline")
     }
     fetchData();
-  }, [currentCity, currentNOE]);
+  }, [currentCity, currentNOE, navigator.onLine]);
 
   return (
     <div className='App'>
