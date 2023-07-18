@@ -36,7 +36,7 @@ export const App = () => {
   }
 
   useEffect(() => {
-    if (navigator.onLine) {
+    if (!navigator.onLine) {
       setWarningAlert("The application is currently offline")
     } else {
       setWarningAlert("")
