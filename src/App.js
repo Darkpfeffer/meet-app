@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { CitySearch } from './components/CitySearch/CitySearch';
 import { EventList } from './components/EventList/EventList';
 import { NumberOfEvents } from './components/NumberOfEvents/NumberOfEvents';
-import { InfoAlert, ErrorAlert } from './components/Alert/Alert';
+import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert/Alert';
 
 //import functions
 import { getEvents, extractLocations } from './api';
@@ -24,6 +24,7 @@ export const App = () => {
   //alert states
   const [infoAlert, setInfoAlert] = useState("");
   const [errorAlert, setErrorAlert] = useState("");
+  const [warningAlert, setWarningAlert] = useState("");
 
   const fetchData = async() => {
     const allEvents = await getEvents();
@@ -35,6 +36,11 @@ export const App = () => {
   }
 
   useEffect(() => {
+    if (navigator.onLine) {
+      setWarningAlert("The application is currently offline")
+    } else {
+      setWarningAlert("")
+    }
     fetchData();
   }, [currentCity, currentNOE]);
 
@@ -54,6 +60,7 @@ export const App = () => {
       <div className='alerts-container'>
         {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
+        {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
       <EventList events={events} currentNOE={currentNOE} />
     </div>
