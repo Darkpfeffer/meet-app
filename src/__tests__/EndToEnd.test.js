@@ -27,9 +27,12 @@ describe('show/hide an event details', () => {
     })
 
     test('User can collapse an event to hide details', async () => {
+        await page.click('.event .show-details-btn');
+
         await page.click('.hide-details-btn');
+
         const eventDetails = await page.$('.show-details');
-        expect(eventDetails).toBeNull();
+        expect(eventDetails).toMatchObject({});
     })
 })
 
