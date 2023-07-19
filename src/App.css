@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+body {
+  color: white; 
+  background-color: rgb(12, 114, 3);
+  background-image: linear-gradient(45deg, rgb(107, 210, 3), 
+  rgb(6, 74, 9), rgb(69, 135, 4), rgb(6, 74, 9));
+  background-size: 100% 2000%;
+  background-repeat: no-repeat;
+}
+
 button {
   border: 2px outset rgba(0, 0, 0, 1);
   border-radius: 6px;
@@ -34,7 +43,7 @@ li {
 
 /* header styling*/
 .App-header {
-  background-color: #2e5c31;
+  background-color: #0a2a02;
   height: 55px;
   display: flex;
   position: fixed;
@@ -58,7 +67,7 @@ li {
   position: fixed;
   top: 36px;
   right: 20px;
-  background-color: #28522b;
+  background-color: #0a2a02;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7);
   padding: 0 20px;
 }
@@ -83,8 +92,9 @@ li {
 
 /* Events styling */
 .event {
-  border: 1px solid rgba(0, 0, 0, 1);
+  border: 1px solid rgba(255, 255, 255, 1);
   background-color: #5DBB63;
+  border-radius: 3%;
 }
 
 .grid-item {
@@ -122,6 +132,8 @@ li {
 }
 
 /* Media queries*/
+
+
 @media all and (max-width: 785px) {
   .App-header {
     height: 55px;
