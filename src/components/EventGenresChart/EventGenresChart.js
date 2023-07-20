@@ -23,19 +23,20 @@ export const EventGenresChart = ({ events }) => {
         return data;
     }
 
-    const renderCustomizedLabel = ({ cx, cy, midAngle, outerRadius, percent, index }) => {
+    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
         const RADIAN = Math.PI / 180;
-        const radius = outerRadius;
-        const x = cx + radius * Math.cos(-midAngle * RADIAN) * 1.07;
-        const y = cy + radius * Math.sin(-midAngle * RADIAN) * 1.07;
+        const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+        const x = cx + radius * Math.cos(-midAngle * RADIAN);
+        const y = cy + radius * Math.sin(-midAngle * RADIAN);
         return percent ? (
             <text
                 x={x}
                 y={y}
-                fill={colors[index]}
-                stroke={colors[index]}
+                fill='#fff'
+                stroke='#fff'
                 style={{ textShadow: '0px 0px 10px rgba(255, 255, 255, 1' }}
                 textAnchor={x > cx ? 'start' : 'end'}
+                fontSize={12}
                 dominantBaseline='central'
             >
                 {`${genres[index]} ${(percent * 100).toFixed(0)}%`}
