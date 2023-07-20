@@ -85,7 +85,7 @@ I will use serverless functions as the server-side of my application to generate
     + **When** the user specifies the number of events visible
     + **Then** the user should be able to see events equal to the given number at once
 
-### Feature 4:Use the app when offline
+### Feature 4: Use the app when offline
 **User story:**
     As a user,
     I should be able to use the app when offline,
