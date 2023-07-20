@@ -18,13 +18,13 @@ export const Event = ({ event }) => {
                 {event && !showDetails ? (
                     <div role="listitem" className="event grid-item">
                         <h2>{event.summary}</h2>
+                        <button onClick={toggleDetails} className="show-details-btn">Show details</button>
                         <p>From<br/>
                             <span>{event.start.dateTime}</span><br />
                             <span> to </span><br />
                             <span>{event.end.dateTime}</span></p>
+                        <p>Location: <span>{event.location}</span></p> 
                         <p>Time zone: <span>{event.start.timeZone}</span></p>
-                        <p>Location: <span>{event.location}</span></p>
-                        <button onClick={toggleDetails} className="show-details-btn">Show details</button>
                     </div>
                 ) : null }
 

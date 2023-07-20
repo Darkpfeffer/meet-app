@@ -11,6 +11,10 @@ body {
   background-repeat: no-repeat;
 }
 
+a {
+  color: #fff;
+}
+
 button {
   border: 2px outset rgba(0, 0, 0, 1);
   border-radius: 6px;
@@ -100,7 +104,7 @@ li {
   display: grid;
   margin-top: 75px;
   padding-bottom: 20px;
-  background-color: #318736;
+  background-color: inherit;
   margin-left: 1%;
   margin-right: 1%;
   border: 1px solid rgba(255, 255, 255, 1);
@@ -111,8 +115,10 @@ li {
 /* Events styling */
 .event {
   border: 1px solid rgba(255, 255, 255, 1);
-  background-color: #318736;
+  background-color: inherit;
   border-radius: 3%;
+  height: 250px;
+  overflow: hidden;
 }
 
 .grid-item {
@@ -122,6 +128,7 @@ li {
 
 .show-details {
   width: 98%;
+  height: auto;
 }
 
 @supports (display: grid) {
