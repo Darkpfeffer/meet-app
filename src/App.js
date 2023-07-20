@@ -63,7 +63,9 @@ export const App = () => {
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
+      <div className='chart-container'>
       <CityEventsChart allLocations={allLocations} events={events}/>
+      </div>
       <EventList events={events} currentNOE={currentNOE} />
     </div>
   )

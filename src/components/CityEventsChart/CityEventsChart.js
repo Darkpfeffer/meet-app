@@ -27,10 +27,10 @@ export const CityEventsChart = ({ allLocations, events}) => {
     }
 
     return (
-        <ResponsiveContainer width="99%" height={400}>
+        <ResponsiveContainer width="98%" height={400} className="chart-container">
           <ScatterChart
             margin={{
-              top: 75,
+              top: 20,
               right: 20,
               bottom: 60,
               left: -25,
@@ -39,10 +39,13 @@ export const CityEventsChart = ({ allLocations, events}) => {
             <CartesianGrid/>
             <XAxis type="category" dataKey="city" name="City" 
                 angle={60} interval={0} tick={{ dx: 20, dy: 40, fontSize: 14 }}
+                stroke="#fff"
             />
-            <YAxis type="number" dataKey="count" name="Number of Events" allowDecimals={false} />
+            <YAxis type="number" dataKey="count" name="Number of Events" allowDecimals={false}
+             stroke="#fff" 
+            />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-            <Scatter name="A school" data={data} fill="#8884d8" />
+            <Scatter name="A school" data={data} fill="#353187"/>
           </ScatterChart>
         </ResponsiveContainer>
       );
