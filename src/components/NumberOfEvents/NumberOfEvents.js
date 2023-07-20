@@ -1,6 +1,10 @@
 export const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
     const numberChange = (event) => {
-        const value = event.target.value
+        const value = (event.target.value <=50 && event.target.value > 0? (
+            event.target.value
+            ) : event.target.value <0 ? (
+                0
+            ) : 50)
         setCurrentNOE(value)
 
         let errorText;

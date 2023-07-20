@@ -32,6 +32,22 @@ export const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
         setInfoAlert("");
     }
 
+    //make suggestion list disappear if the user clicks outside the input and suggestion list
+    const hideSuggestionList = (event) => {
+        if (event.target === document.querySelector('.suggestions') || event.target === document.querySelector('.city')) {
+            //do nothing
+        } else {
+            setShowSuggestions(false);
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('click', hideSuggestionList)
+        return () => document.removeEventListener('click', hideSuggestionList)
+    }, [window])
+
+
+
     useEffect(() => {
         setSuggestions(allLocations);
     }, [`${allLocations}`])
