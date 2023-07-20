@@ -36,7 +36,7 @@ export const EventGenresChart = ({ events }) => {
                 stroke='#fff'
                 style={{ textShadow: '0px 0px 10px rgba(255, 255, 255, 1' }}
                 textAnchor={x > cx ? 'start' : 'end'}
-                fontSize={12}
+                fontSize={14}
                 dominantBaseline='central'
             >
                 {`${genres[index]} ${(percent * 100).toFixed(0)}%`}

@@ -45,7 +45,7 @@ export const CityEventsChart = ({ allLocations, events}) => {
              stroke="#fff" 
             />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-            <Scatter name="A school" data={data} fill="#353187"/>
+            <Scatter name="A school" data={data} fill="#490765"/>
           </ScatterChart>
         </ResponsiveContainer>
       );
