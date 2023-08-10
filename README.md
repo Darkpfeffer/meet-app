@@ -1,6 +1,6 @@
 # meet-app
 
-This application that shows the users upcoming events on their city of choice. It is partly usable offline, if someone already searched for events.
+This is an application that shows the users upcoming events on their city of choice. It is partly usable offline, if someone already searched for events.
 
 Usable with any device.
 
@@ -8,9 +8,11 @@ This is a serverless web application, built with test-driven and behavior-driven
 
 **Serverless provider: Amazon Web Services**
 
-I will use serverless functions as the server-side of my application to generate an OAuth token to the user in order to be authorized, and they will be able to use the Google Calendar API
+I use serverless functions as the server-side of my application to generate an OAuth token to the user in order to be authorized, and they are able to use the Google Calendar API
 
 **API used:** Google Calendar API
+
+The application is hosted at: https://darkpfeffer.github.io/meet-app/
 
 ### Tools I used
     - Frontend
