@@ -4,9 +4,9 @@
 
 body {
   color: white; 
-  background-color: rgb(12, 114, 3);
-  background-image: linear-gradient(45deg, rgb(107, 210, 3), 
-  rgb(6, 74, 9), rgb(69, 135, 4), rgb(6, 74, 9));
+  background-color: rgba(12, 114, 3, 0.3);
+  background-image: linear-gradient(45deg, rgba(107, 210, 3, 0.7), 
+  rgba(6, 74, 9, 0.7), rgba(69, 135, 4, 0.7), rgba(6, 74, 9, 0.7));
   background-size: 100% 200%;
   background-repeat: no-repeat;
 }
