@@ -1,6 +1,6 @@
 # meet-app
 
-This is an application that shows the users upcoming events on their city of choice. It is partly usable offline, if someone already searched for events.
+This is an application that shows the users upcoming events in their city of choice. It is partly usable offline, if someone already searched for events.
 
 Usable with any device.
 

@@ -20,9 +20,12 @@ export const Event = ({ event }) => {
                         <h2>{event.summary}</h2>
                         <button onClick={toggleDetails} className="show-details-btn">Show details</button>
                         <p>From<br/>
-                            <span>{event.start.dateTime}</span><br />
+                            <span>{event.start.dateTime.substring(0, 10)} {event.start.dateTime.substring(11, 19)}</span>
+                            <span> UTC{event.start.dateTime.substring(19, 20)}{event.start.dateTime.substring(21, 22)}</span>
+                            <br />
                             <span> to </span><br />
-                            <span>{event.end.dateTime}</span></p>
+                            <span><span>{event.end.dateTime.substring(0, 10)} {event.end.dateTime.substring(11, 19)}</span>
+                            <span> UTC{event.end.dateTime.substring(19, 20)}{event.end.dateTime.substring(21, 22)}</span></span></p>
                         <p>Location: <span>{event.location}</span></p> 
                         <p>Time zone: <span>{event.start.timeZone}</span></p>
                     </div>
@@ -31,7 +34,9 @@ export const Event = ({ event }) => {
                 {event && showDetails ? (
                     <div role="listitem" className="event grid-item show-details">
                         <h2>{event.summary}</h2>
-                        <p>From <span>{event.start.dateTime}</span><span> to </span><span>{event.end.dateTime}</span></p>
+                        <p>From <span>{event.start.dateTime.substring(0, 10)} {event.start.dateTime.substring(11, 19)}</span>
+                            <span> to </span><span>{event.end.dateTime.substring(0, 10)} {event.end.dateTime.substring(11, 19)}</span>
+                        </p>
                         <p>Time zone: <span>{event.start.timeZone}</span></p>
                         <p>Location: <span>{event.location}</span></p>
                         <p className="description">{event.description}</p>
